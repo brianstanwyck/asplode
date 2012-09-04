@@ -21,6 +21,9 @@ module BulletMethods
   end
 
   def remove_bullet(bullet)
+    @space.remove_body(bullet.body)
+    @space.remove_shape(bullet.shape)
+
     @bullets.delete(bullet)
   end
 

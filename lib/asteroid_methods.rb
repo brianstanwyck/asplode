@@ -41,6 +41,11 @@ module AsteroidMethods
   end
 
   def remove_asteroid(ast)
+    ast.shapes.each do |shape|
+      @space.remove_shape(shape)
+    end
+
+    @space.remove_body(ast.body)
     @asteroids.delete(ast)
   end
 end
