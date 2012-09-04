@@ -20,6 +20,8 @@ module Triangulation
     [body, shapes]
   end
 
+  private
+
   # Accepts an array of vertices in clockwise order,
   # and returns an array of triangles which
   # triangulate the original polygon
