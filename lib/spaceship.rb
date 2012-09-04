@@ -13,6 +13,7 @@ class Spaceship
   end
 
   MAX_VELOCITY = 400
+  THRUST_POWER = 250
 
   def initialize
     mass = 20
@@ -47,7 +48,7 @@ class Spaceship
     cos, sin = rot
     rot_matrix = Matrix[[cos, -sin], [sin, cos]]
 
-    thrust_array = (rot_matrix * Matrix[[0], [-10000]]).to_a.flatten
+    thrust_array = (rot_matrix * Matrix[[0], [-THRUST_POWER]]).to_a.flatten
     CP::Vec2.new(
       *thrust_array
     )
@@ -72,11 +73,7 @@ class Spaceship
   end
 
   def thrust
-    @body.apply_force(thrust_force, ORIGIN)
-  end
-
-  def stop_thrust
-    @body.reset_forces
+    @body.apply_impulse(thrust_force, ORIGIN)
   end
 
   def center

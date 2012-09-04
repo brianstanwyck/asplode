@@ -65,6 +65,10 @@ class AsplodeWindow < Gosu::Window
     elsif @tilting_right
       @spaceship.tilt(:right)
     end
+
+    if @thrusting
+      @spaceship.thrust
+    end
   end
 
   def draw

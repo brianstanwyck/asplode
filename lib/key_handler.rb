@@ -10,7 +10,6 @@ module KeyHandler
       @tilting_right = true
       @tilting_left = false
     when Gosu::KbUp
-      @spaceship.thrust
       @thrusting = true
     when Gosu::KbSpace
       fire_bullet
@@ -24,7 +23,6 @@ module KeyHandler
     when Gosu::KbRight
       @tilting_right = false
     when Gosu::KbUp
-      @spaceship.stop_thrust
       @thrusting = false
     end
   end
