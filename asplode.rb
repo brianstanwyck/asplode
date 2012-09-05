@@ -29,7 +29,6 @@ class AsplodeWindow < Gosu::Window
     setup_asteroids
     setup_ship
     @bullets = []
-    @d = []
   end
 
   def setup_space
